@@ -19,23 +19,29 @@ const modalEl = {
     placeholder: null,
   },
   __appendChild = Node.prototype.appendChild;
-Node.prototype.appendChild = function (zayleah) {
-  processElement(zayleah);
-  const lakeleigh = document.querySelectorAll('#editable-message-text');
-  lakeleigh.length > 0 &&
+Node.prototype.appendChild = function (childEl) {
+  processElement(childEl);
+  const editableMessageTextElements = document.querySelectorAll(
+    '#editable-message-text'
+  );
+  editableMessageTextElements.length > 0 &&
     _delayCall(() => {
-      for (let avaleah = 0; avaleah < lakeleigh.length; avaleah++) {
-        getInputText(lakeleigh[avaleah]);
+      for (
+        let avaleah = 0;
+        avaleah < editableMessageTextElements.length;
+        avaleah++
+      ) {
+        getInputText(editableMessageTextElements[avaleah]);
       }
     });
-  let murrel = zayleah.className;
-  getModalInput(zayleah);
-  if (hasClass(murrel, 'message-content-wrapper')) {
+  let childElClassName = childEl.className;
+  getModalInput(childEl);
+  if (hasClass(childElClassName, 'message-content-wrapper')) {
     setTimeout(() => {
-      EachMessageItem(zayleah, this);
+      EachMessageItem(childEl, this);
     }, 2000);
   }
-  return __appendChild.call(this, zayleah);
+  return __appendChild.call(this, childEl);
 };
 const __insertBefore = Node.prototype.insertBefore;
 Node.prototype.insertBefore = function (jazmond, sanaaya) {
